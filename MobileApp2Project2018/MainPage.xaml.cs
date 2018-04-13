@@ -30,8 +30,7 @@ namespace MobileApp2Project2018
         private String LocationContainer;
         private String GenderContainer;
         private String drinkUnitContainer;
-        private double costContainer;
-
+       
 
         public MainPage()
 

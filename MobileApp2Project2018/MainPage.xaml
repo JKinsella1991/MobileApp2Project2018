@@ -1,6 +1,5 @@
 ﻿<!-- James Kinsella - G00282261@gmit.ie -->
 <!-- Mobile Applications 2 - Project 2018 -->
-
 <Page
     x:Class="MobileApp2Project2018.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,9 +8,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
+    <!--Declare main Grid, foundation of the app-->
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot x:Name="CalcPivot" Title="The JamSoft Alcohol Unit Calculator v0.1" Background="SlateGray" FontFamily="Calibri Light" FontSize="18">
+        <!--Backbone of the app-->
+         <Pivot x:Name="CalcPivot" Title="The JamSoft Alcohol Unit Calculator v0.1" Background="SlateGray" FontFamily="Calibri Light" FontSize="18">
+            <!--First 'page' of the app, general welcome stuff, premise, etc-->
             <PivotItem Header="Welcome!">
                 <Grid HorizontalAlignment="Center">
                     <StackPanel VerticalAlignment="Top">
@@ -31,6 +33,7 @@
                 </Grid>
             </PivotItem>
 
+            <!--User info, instructions-->
             <PivotItem Header="App Guide" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
@@ -47,14 +50,17 @@
                 </Grid>
             </PivotItem>
 
+            <!--User inputs their gender, and location-->
+            <!--Gender: Used to  determine reference intake of units per week (170/110)-->
+            <!--Location: Used to display location specific drink choices (Pints/cans)*Not Implemented*-->
             <PivotItem Header="Info" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel x:Name="RadioChoice">
-                        <TextBlock FontWeight="Bold">Firstly, what gender were you born?</TextBlock>
+                        <TextBlock TextWrapping="Wrap" FontWeight="Bold">Firstly, what gender were you born? (This helps us determine your reference intake)</TextBlock>
 
-                        <RadioButton x:Name="rdoMale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Male" Click="rdoMale_Click" IsRightTapEnabled="False"/>
+                        <RadioButton x:Name="rdoMale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Male" IsRightTapEnabled="False"/>
 
-                        <RadioButton x:Name="rdoFemale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Female" Click="rdoFemale_Click"/>
+                        <RadioButton x:Name="rdoFemale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Female"/>
 
                         <TextBlock FontWeight="Bold">Next, where were you drinking?</TextBlock>
                         <RadioButton x:Name="rdoPub" Margin="5" Checked="LocationCheck" GroupName="Location" Content="Pub"/>
@@ -63,6 +69,9 @@
                     </StackPanel>
                 </Grid>
             </PivotItem>
+
+            <!--Implementation: Sub section of drinks has its own subsection, taking int values-->
+            <!--from a textbox into a converter against a reference of units per week-->
             <PivotItem Header="Drinks and Quantity" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
                     <StackPanel x:Name="DrinkChoice">
@@ -87,12 +96,12 @@
                             <TextBlock x:Name="largeSpirit">Single Large Spirit (35ml)</TextBlock>
                         </StackPanel>
                         <TextBlock></TextBlock>
-                        <Button x:Name="DrinkCalculate" HorizontalAlignment="Center" Click="drinkCalculate_Click">Calculate!</Button>
+                        <Button x:Name="DrinkCalculate" HorizontalAlignment="Center">Calculate!</Button>
                     </StackPanel>
                 </Grid>
             </PivotItem>
 
-            
+            <!--Output result to the three textblock containers, with an on_Click event-->
             <PivotItem Header="Result" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
@@ -137,3 +146,5 @@
         </Pivot>
     </Grid>
 </Page>
+<!--END OF THE LINE-->
+
