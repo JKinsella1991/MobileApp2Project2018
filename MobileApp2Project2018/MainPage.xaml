@@ -12,7 +12,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot x:Name="CalcPivot" Title="The JamSoft Alcohol Unit Calculator v0.1" Background="SlateGray" FontFamily="Calibri Light" FontSize="18">
-            <PivotItem Header="Welcome!" Background="White">
+            <PivotItem Header="Welcome!">
                 <Grid HorizontalAlignment="Center">
                     <StackPanel VerticalAlignment="Top">
                         <TextBlock TextWrapping="Wrap">Welcome to the JamSoft alcoholic beverage unit calculator!</TextBlock>
@@ -20,7 +20,7 @@
 
                     <StackPanel VerticalAlignment="Center">
                         <TextBlock TextWrapping="Wrap">What is the real impact of drinking on your health, wellbeing and bank balance?
-                            With this app you can gain an insight into your drinking habits, and perhaps make a change for the better!                 
+                            With this app you can gain an insight into your drinking habits, and perhaps make a change for the better!
                         </TextBlock>
                     </StackPanel>
 
@@ -49,29 +49,54 @@
 
             <PivotItem Header="Info" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
-                    <StackPanel>
-                        <TextBlock>Firstly, what gender were you born?</TextBlock>
-                        <RadioButton x:Name="rdoMale" Margin="5" Checked="genderCheck"
-                                     GroupName="Gender" Content="Male" />
-                        
-                        <RadioButton x:Name="rdoFemale" Margin="5" Checked="genderCheck"
-                                     GroupName="Gender" Content="Female" />
+                    <StackPanel x:Name="RadioChoice">
+                        <TextBlock FontWeight="Bold">Firstly, what gender were you born?</TextBlock>
+
+                        <RadioButton x:Name="rdoMale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Male" Click="rdoMale_Click"/>
+
+                        <RadioButton x:Name="rdoFemale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Female" Click="rdoFemale_Click"/>
+
+                        <TextBlock FontWeight="Bold">Next, where were you drinking?</TextBlock>
+                        <RadioButton x:Name="rdoPub" Margin="5" Checked="LocationCheck" GroupName="Location" Content="Pub"/>
+
+                        <RadioButton x:Name="rdoHouse" Margin="5" Checked="LocationCheck" GroupName="Location" Content="House"/>
                     </StackPanel>
                 </Grid>
             </PivotItem>
 
             <PivotItem Header="Drinks and Quantity" Background="White">
-                <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
-                    <StackPanel>
+                <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <StackPanel x:Name="DrinkChoice">
+                        <TextBlock>Wine:</TextBlock>
+                        <StackPanel x:Name="choiceWine">
+                            <TextBlock x:Name="small">Small Red/White/Rose (125ml)</TextBlock>
+                            <TextBlock x:Name="standard">Standard Red/White/Rose (175ml)</TextBlock>
+                            <TextBlock x:Name="large">Large Red/White/Rose (250ml)</TextBlock>
+                        </StackPanel>
                         <TextBlock></TextBlock>
+                        <TextBlock>Beer:</TextBlock>
+                        <StackPanel x:Name="choiceBeer">
+                            <TextBlock x:Name="lowBeer">Low Strength Beer/Larger/Cider (568ml)</TextBlock>
+                            <TextBlock x:Name="highBeer">High Strength Beer/Larger/Cider (568ml)</TextBlock>
+                            <TextBlock x:Name="bottleBeer">Bottle of Beer/Larger/Cider (330ml)</TextBlock>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <TextBlock>Spirits:</TextBlock>
+                        <StackPanel x:Name="choiceSpirits">
+                            <TextBlock x:Name="alcopop">Alcopop (275ml)</TextBlock>
+                            <TextBlock x:Name="smallSpirit">Single Small Spirit (25ml)</TextBlock>
+                            <TextBlock x:Name="largeSpirit">Single Large Spirit (35ml)</TextBlock>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <Button x:Name="DrinkCalculate" HorizontalAlignment="Center" Click="drinkCalculate_Click">Calculate!</Button>
                     </StackPanel>
                 </Grid>
             </PivotItem>
 
-            <PivotItem Header="Rresult" Background="White">
+            <PivotItem Header="Result" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
-                        <TextBlock></TextBlock>
+                        <TextBlock x:Name="AllResults"></TextBlock>
                     </StackPanel>
                 </Grid>
             </PivotItem>
@@ -79,13 +104,30 @@
             <PivotItem Header="Info" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
-                        <TextBlock></TextBlock>
+                        <TextBlock TextWrapping="Wrap">Hopefully this app will provide you with a 
+                                                       general idea of your alcohol consumption. But for more detailed and helpful 
+                                                       information please consider the following links helpful:</TextBlock>
+                        <TextBlock><Hyperlink xml:space="preserve" NavigateUri="http://www.drinkaware.ie.com">Go to Drinkaware.ie</Hyperlink></TextBlock>
+                        <TextBlock><Hyperlink xml:space="preserve" NavigateUri="http://www.drinkaware.ie/facts/how-to-stop-drinking-completely">How to Stop drinking alcohol completely</Hyperlink></TextBlock>
+                        <TextBlock><Hyperlink xml:space="preserve" NavigateUri="https://www.icgp.ie/go/find_a_gp">Find a local General Practitioner</Hyperlink></TextBlock>
+
+                        <StackPanel x:Name="infoGuidelines">
+                            <TextBlock></TextBlock>
+                            <TextBlock>HSE low-risk Guidelines</TextBlock>
+                            <TextBlock TextWrapping="Wrap">For Men, guidelines indicate up to 17 standard drinks per week.</TextBlock>
+                            <TextBlock TextWrapping="Wrap">For Women, the HSE has set guidelines of about 11 standard drinks per week.</TextBlock>
+                        </StackPanel>
+
+                        <StackPanel x:Name="infoDisclaimer">
+                            <TextBlock></TextBlock>
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom">DISCLAIMER:
+                            This Application is intended for entertainment or educational purposes only, 
+                            and shoud not be a substitute for a GP visit if you are concerned that 
+                            drinking is having a negative effect on your life</TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </PivotItem>
-
-
         </Pivot>
-
     </Grid>
 </Page>

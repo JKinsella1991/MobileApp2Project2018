@@ -24,12 +24,36 @@ namespace MobileApp2Project2018
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {
-
+    { 
         public MainPage()
+
         {
             this.InitializeComponent();
         }
 
+        public void GenderCheck(object sender, RoutedEventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+
+           // GenderBool = RadioChoice;
+
+        }
+
+
+        private void LocationCheck(object sender, RoutedEventArgs e)
+        {
+            //placeholder
+        }
+
+        private void DrinkCalculate_Click(object sender, RoutedEventArgs e)
+        {
+        //placeholder
+        }
+
+        private void RadioChoice_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
-}
+    }
+
