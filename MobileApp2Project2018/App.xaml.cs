@@ -1,4 +1,7 @@
-﻿using System;
+﻿//James Kinsella - G00282261@gmit.ie
+//Mobile Applications 2 - Project 2018
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

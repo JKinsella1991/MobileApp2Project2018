@@ -1,4 +1,7 @@
-﻿using System;
+﻿//James Kinsella - G00282261@gmit.ie
+//Mobile Applications 2 - Project 2018
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +25,11 @@ namespace MobileApp2Project2018
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
         }
+
     }
 }
