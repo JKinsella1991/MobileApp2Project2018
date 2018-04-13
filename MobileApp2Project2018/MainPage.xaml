@@ -63,7 +63,6 @@
                     </StackPanel>
                 </Grid>
             </PivotItem>
-
             <PivotItem Header="Drinks and Quantity" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
                     <StackPanel x:Name="DrinkChoice">
@@ -93,6 +92,7 @@
                 </Grid>
             </PivotItem>
 
+            
             <PivotItem Header="Result" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
@@ -103,7 +103,8 @@
                     </StackPanel>
                 </Grid>
             </PivotItem>
-
+            
+            <!--Group of disclaimers, info, etc-->
             <PivotItem Header="Info" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
@@ -114,13 +115,15 @@
                         <TextBlock><Hyperlink xml:space="preserve" NavigateUri="http://www.drinkaware.ie/facts/how-to-stop-drinking-completely">How to Stop drinking alcohol completely</Hyperlink></TextBlock>
                         <TextBlock><Hyperlink xml:space="preserve" NavigateUri="https://www.icgp.ie/go/find_a_gp">Find a local General Practitioner</Hyperlink></TextBlock>
 
+                        <!-- Guidelines for weekly unit intake. Source: http://www.drinkaware.ie/facts/what-are-the-low-risk-weekly-guidelines -->
                         <StackPanel x:Name="infoGuidelines">
                             <TextBlock></TextBlock>
                             <TextBlock>HSE low-risk Guidelines</TextBlock>
                             <TextBlock TextWrapping="Wrap">For Men, guidelines indicate up to 17 standard drinks per week.</TextBlock>
                             <TextBlock TextWrapping="Wrap">For Women, the HSE has set guidelines of about 11 standard drinks per week.</TextBlock>
                         </StackPanel>
-
+                        
+                        <!-- Just a general disclaimer, as you do -->
                         <StackPanel x:Name="infoDisclaimer">
                             <TextBlock></TextBlock>
                             <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom">DISCLAIMER:

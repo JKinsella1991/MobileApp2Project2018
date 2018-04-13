@@ -24,36 +24,45 @@ namespace MobileApp2Project2018
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    { 
+    {
+
+        //Containers for radio values
+        private String LocationContainer;
+        private String GenderContainer;
+        private String drinkUnitContainer;
+        private double costContainer;
+
+
         public MainPage()
 
         {
             this.InitializeComponent();
         }
 
-        public void GenderCheck(object sender, RoutedEventArgs e)
+        //Method for radio button, pulling info into container
+        private void GenderCheck(object sender, RoutedEventArgs e)
         {
-            RadioButton radioButton = sender as RadioButton;
-
-           // GenderBool = RadioChoice;
-
+            RadioButton gender = sender as RadioButton;
+            GenderContainer = "Your gender is: " + gender.GroupName;
         }
 
-
+        //Method for radio button, pulling info into container
         private void LocationCheck(object sender, RoutedEventArgs e)
         {
-            //placeholder
+            RadioButton location = sender as RadioButton;
+            LocationContainer = "You were drinking at the: " +location.GroupName;
         }
 
-        private void DrinkCalculate_Click(object sender, RoutedEventArgs e)
+        //Method for button, pushing info to Textblocks at bottom of app
+        private void Calculate_Click(object sender, RoutedEventArgs e)
         {
-        //placeholder
-        }
+            //Pushes to containers
+            genderResults.Text = GenderContainer;
+            locationResults.Text = LocationContainer;
 
-        private void RadioChoice_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
+            //Unimplemented :/
+            drinkResults.Text = drinkUnitContainer;
         }
     }
-    }
+}
 
