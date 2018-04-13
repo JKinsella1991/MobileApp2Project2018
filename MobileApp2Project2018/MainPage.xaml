@@ -52,7 +52,7 @@
                     <StackPanel x:Name="RadioChoice">
                         <TextBlock FontWeight="Bold">Firstly, what gender were you born?</TextBlock>
 
-                        <RadioButton x:Name="rdoMale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Male" Click="rdoMale_Click"/>
+                        <RadioButton x:Name="rdoMale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Male" Click="rdoMale_Click" IsRightTapEnabled="False"/>
 
                         <RadioButton x:Name="rdoFemale" Margin="5" Checked="GenderCheck" GroupName="Gender" Content="Female" Click="rdoFemale_Click"/>
 
@@ -96,7 +96,10 @@
             <PivotItem Header="Result" Background="White">
                 <Grid VerticalAlignment="Top" HorizontalAlignment="Center">
                     <StackPanel>
-                        <TextBlock x:Name="AllResults"></TextBlock>
+                        <Button x:Name="calculate" Content="Calculate!" Click="Calculate_Click"/>
+                        <TextBlock x:Name="genderResults"/>
+                        <TextBlock x:Name="locationResults"/>
+                        <TextBlock x:Name="drinkResults"/>
                     </StackPanel>
                 </Grid>
             </PivotItem>
